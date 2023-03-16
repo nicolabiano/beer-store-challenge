@@ -79,12 +79,13 @@ ul {
 	color: #323232;
 	background: #FFFFFF
 }
-.btn-style-two, .active-one {
+.btn-style-two, .active-one, .btn-style-one:hover {
 	color: #ffffff;
 	background: #FF9F24
 }
-.active-one * {
-	color: #ffffff
+.active-one *, .btn-style-one:hover * {
+	color: #ffffff;
+    fill: #ffffff
 }
 .accessibility-text {
     font-size: 0;
