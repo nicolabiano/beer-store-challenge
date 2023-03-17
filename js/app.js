@@ -1,18 +1,5 @@
 /* Dynamic Beer Ecommerce */
 
-/* Import required assets */
-import { home } from './home-plp.js';
-import { pdp } from './pdp.js';
-
-/* Register components
-const app = async () => {
-    home();
-    pdp();
-};
-
-/* Load main function */
-//document.addEventListener("DOMContentLoaded", app);
-
 /* Define routes array */
 const routes = {
   '/' : home,
