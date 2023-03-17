@@ -1,8 +1,8 @@
 /* Dynamic Beer Ecommerce */
 
 /* Import required assets */
-import * from './home-plp.js';
-import * from './pdp.js';
+import * from '/home-plp.js';
+import * from '/pdp.js';
 
 /* Define routes array */
 const routes = {
