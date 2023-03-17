@@ -1,17 +1,15 @@
 /* Dynamic Beer Ecommerce */
 
 /* Functions to fetch HTML */
-var home, pdp;
-
-function loadHome() {
-	fetch(`./html/home.html`).then(function (response) {
+const home = fetch(`./html/home.html`).then(function (response) {
 		// The API call was successful!
 		return response.text();
 	}).then(function (html) {
-		var parser = new DOMParser();
-		home = parser.parseFromString(html, 'text/html');
+		// This is the HTML from our response as a text string
+		console.log(html);
+		return html;
 	});
-}
+
 function loadPDP() {
 	fetch(`./html/pdp.html`).then(function (response) {
 		// The API call was successful!
