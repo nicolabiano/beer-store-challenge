@@ -1,5 +1,32 @@
 /* Dynamic Beer Ecommerce */
 
+/* Functions to fetch HTML */
+var home, pdp;
+
+function loadHome() {
+	fetch(`./html/home.html`).then(function (response) {
+		// The API call was successful!
+		return response.text();
+	}).then(function (html) {
+		var parser = new DOMParser();
+		home = parser.parseFromString(html, 'text/html');
+	});
+}
+function loadPDP() {
+	fetch(`./html/pdp.html`).then(function (response) {
+		// The API call was successful!
+		return response.text();
+	}).then(function (html) {
+		var parser = new DOMParser();
+		pdp = parser.parseFromString(html, 'text/html');
+	});
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	loadHome();
+	loadPDP();
+});
+
 /* Define routes array */
 const routes = {
   '/' : home,
