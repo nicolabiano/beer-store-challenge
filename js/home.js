@@ -1,4 +1,4 @@
-export default () => /*html*/`
+let home = `
 <header id="site-header">
 	<div class="desktop-header"></div>
 	<div class="mobile-header">
