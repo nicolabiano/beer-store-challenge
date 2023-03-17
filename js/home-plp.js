@@ -1,6 +1,6 @@
 /* Markup for Homepage */
  
-export const home = '
+export const home = `
 <header id="site-header">
 	<div class="desktop-header"></div>
 	<div class="mobile-header">
@@ -56,7 +56,7 @@ export const home = '
 		</div>
 		<ul class="products-container">
 			<li id="product-card" class="product id-127 instock">
-				<a href="/127-modelo-especial" class="product-link" onclick="onNavigate('/product'); return false;">
+				<a href="/127-modelo-especial" class="product-link">
 					<h3 class="product-title text-color-one text-size-m text-bold">Modelo Especial</h3>
 					<div class="product-thumbnail-wrapper">
 						<img width="240" height="240" src="products/modelo-especial.jpeg" class="product-thumbnail-image" alt="" loading="lazy">
@@ -72,7 +72,7 @@ export const home = '
 				</a>
 			</li>
 			<li id="product-card" class="product id-127 instock">
-				<a href="/127-modelo-especial" class="product-link" onclick="onNavigate('/product'); return false;">
+				<a href="/127-modelo-especial" class="product-link">
 					<h3 class="product-title text-color-one text-size-m text-bold">Modelo Especial</h3>
 					<div class="product-thumbnail-wrapper">
 						<img width="240" height="240" src="products/modelo-especial.jpeg" class="product-thumbnail-image" alt="" loading="lazy">
@@ -114,4 +114,4 @@ export const home = '
 		</span>
 	</a>
 </div>
-';
+`;
