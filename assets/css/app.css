@@ -44,7 +44,7 @@ ul {
     margin: 0
 }
 
-/* General styles */
+/* General styles BEGIN */
 .gray-bg {
     background-color: #FAFAFA
 }
@@ -70,10 +70,19 @@ ul {
     color: #323232
 }
 .text-color-two {
-    color: #646464
+    color: #969696
+}
+.text-color-three {
+    color: #0F0D23
+}
+.text-color-four {
+    color: #FF9F24
 }
 .btn {
-	border-radius: 12px
+	border-radius: 12px;
+	border-width: 1px;
+    border-style: solid;
+    border-color: transparent
 }
 .btn-style-one, .active-two {
 	color: #323232;
@@ -81,11 +90,19 @@ ul {
 }
 .btn-style-two, .active-one, .btn-style-one:hover {
 	color: #ffffff;
-	background: #FF9F24
+	background: #FF9F24;
+	border-color: #FF9F24
+}
+.btn-style-three {
+	color: #FF9F24;
+	background: transparent;
+	border-color: #FF9F24
 }
 .active-one *, .btn-style-one:hover * {
-	color: #ffffff;
-    fill: #ffffff
+	color: #ffffff;   
+}
+.active-one svg *, .btn-style-one:hover svg * {
+	fill: #ffffff
 }
 .accessibility-text {
     font-size: 0;
@@ -110,6 +127,7 @@ ul {
 	}
 
 }
+/* General styles END */
 
 /* Loading animation */
 #loading-spinner {
@@ -134,17 +152,16 @@ ul {
 	}
 }
 
-/* Header styles */
-
-
+/* Header styles BEGIN */
 @media only screen and (max-width: 767px) {
 	.mobile-header {
-	    min-height: 80px;
+	    margin-top: 40px;
+	    min-height: 40px;
 	    display: flex;
-	    align-items: flex-end;
-	    justify-content: space-between
+	    align-items: center;
+	    justify-content: space-between;
 	}
-	.mobile-menu-button {
+	.header-button {
 	    width: 40px;
 	    height: 40px;
 	    display: flex;
@@ -155,8 +172,9 @@ ul {
 	    border-radius: 50%
 	}
 }
+/* Header styles END */
 
-/* PLP styles */
+/* PLP styles BEGIN */
 /* Welcome message */
 .welcome-wrapper {
     margin-top: 24px
@@ -221,13 +239,13 @@ ul {
 #product-listings {
     margin-bottom: 100px
 }
-.products-container {
+#product-listings .products-container {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     row-gap: 16px;
     column-gap: 13px
 }
-.product {
+#product-listings .product {
     position: relative;
     background: #ffffff;
     border-radius: 12px;
@@ -298,3 +316,115 @@ ul {
 .menu-link-btn.menu-active svg path {
     fill: #FF9F24
 }
+/* PLP styles END */
+
+/* PDP styles BEGIN */
+.product-summary {
+    margin-top: 4px;
+}
+#product-gallery {
+    text-align: center;
+    margin-bottom: 10px;
+}
+#product-gallery .product-thumbnail-image {
+    max-width: 240px;
+    max-height: 240px;
+    object-fit: contain;
+}
+.product-summary-wrapper {
+    margin-right: -24px;
+    margin-left: -24px;
+    padding: 45px 24px 35px;
+    background: #ffffff;
+    border-top-left-radius: 48px;
+    border-top-right-radius: 48px;
+}
+.title-price-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+}
+.origin-stock-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-bottom: 30px;
+}
+#product-origin {
+    margin-right: 8px;
+    padding-right: 8px;
+    border-right: 1px solid;
+}
+.product-description-wrapper {
+    position: relative;
+    margin-bottom: 22px;
+}
+.description-title {
+    line-height: 1.3;
+    margin-bottom: 8px;
+}
+#product-description {
+    line-height: 1.72;
+    margin: 0;
+    max-height: 6.88em;
+    overflow: hidden;
+}
+#product-read-more {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 1.44em;
+    background: #fff;
+}
+#product-read-more::before {
+    content: '...';
+    color: #969696;
+    padding-left: 4px;
+    padding-right: 4px;
+}
+.product-variations {
+    margin-bottom: 50px;
+}
+.variations-title {
+    line-height: 1.3;
+    margin-bottom: 14px;
+}
+#variation-swatches-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 16px;
+    row-gap: 8px;
+    flex-wrap: wrap;
+}
+.variation-option {
+    display: flex;
+    height: fit-content;
+    border: 1px solid;
+    border-radius: 15.5px;
+}
+.variation-option a {
+    padding: 6px 16px;
+}
+.add-to-cart-wrapper {
+    display: grid;
+    grid-template-columns: 54px auto;
+    align-items: center;
+    justify-items: center;
+    column-gap: 24px;
+}
+#bag-btn {
+    height: 54px;
+    width: 54px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#add-to-cart {
+    line-height: 1;
+    width: 100%;
+    padding: 18px;
+    text-align: center;
+}
+/* PDP styles END */
