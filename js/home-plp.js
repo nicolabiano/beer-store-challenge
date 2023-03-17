@@ -1,6 +1,6 @@
 /* Markup for Homepage */
  
-export const home = () => '
+export const home = '
 <header id="site-header">
 	<div class="desktop-header"></div>
 	<div class="mobile-header">

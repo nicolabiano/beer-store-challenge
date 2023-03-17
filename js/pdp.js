@@ -1,6 +1,6 @@
 /* Markup for Product Page */
 
-export const pdp = () => '
+export const pdp = '
 <header id="site-header">
 	<div class="desktop-header"></div>
 	<div class="mobile-header">

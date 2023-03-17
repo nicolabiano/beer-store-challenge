@@ -4,14 +4,14 @@
 import { home } from './home-plp.js';
 import { pdp } from './pdp.js';
 
-/* Register components */
+/* Register components
 const app = async () => {
     home();
     pdp();
 };
 
 /* Load main function */
-document.addEventListener("DOMContentLoaded", app);
+//document.addEventListener("DOMContentLoaded", app);
 
 /* Define routes array */
 const routes = {
