@@ -1,3 +1,4 @@
+export default () => /*html*/`
 <header id="site-header">
 	<div class="desktop-header"></div>
 	<div class="mobile-header">
@@ -69,7 +70,7 @@
 				</a>
 			</li>
 			<li id="product-card" class="product id-127 instock">
-				<a href="/127-modelo-especial" class="product-link">
+				<a href="/pdp" class="product-link" data-link>
 					<h3 class="product-title text-color-one text-size-m text-bold">Modelo Especial</h3>
 					<div class="product-thumbnail-wrapper">
 						<img width="240" height="240" src="products/modelo-especial.jpeg" class="product-thumbnail-image" alt="" loading="lazy">
@@ -111,3 +112,4 @@
 		</span>
 	</a>
 </div>
+`;

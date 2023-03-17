@@ -267,6 +267,7 @@ ul {
     margin-bottom: 5px
 }
 #product-card .product-thumbnail-wrapper {
+    text-align: center;
     margin-bottom: 12px
 }
 #product-card .product-thumbnail-image {
@@ -291,6 +292,9 @@ ul {
 
 /* Fixed menu */
 #fixed-menu {
+    max-width: 100%;
+    padding-right: 24px;
+    padding-left: 24px;
     position: fixed;
     bottom: 0;
     left: 0;

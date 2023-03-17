@@ -1,34 +1,35 @@
 /* Dynamic Beer Ecommerce */
 
-/* Functions to fetch HTML */
-const home = fetch(`./html/home.html`).then(function (response) {
-		return response;
-});
-const pdp = fetch(`./html/pdp.html`).then(function (response) {
-		return response;
-});
+import home from "./home.js";
+import pdp from "./pdp.js";
 
-/* Define routes array */
 const routes = {
-  '/' : home,
-  '/product' : pdp
+    "/": { title: "Home", render: home },
+    "/pdp": { title: "Product", render: pdp },
+};
+console.log(routes);
+
+function router() {
+    let view = routes[location.pathname];
+    console.log(view);
+    if (view) {
+        document.title = view.title;
+        page.innerHTML = view.render();
+    } else {
+        history.replaceState("", "", "/");
+        router();
+    }
 };
 
-/* Select content container and print content */
-const pageDiv = document.getElementById('page');
-pageDiv.innerHTML = routes[window.location.pathname];
+// Handle navigation
+window.addEventListener("click", e => {
+    if (e.target.matches("[data-link]")) {
+        e.preventDefault();
+        history.pushState("", "", e.target.href);
+        router();
+    }
+});
 
-/* Allow browser navigation between routes */
-const onNavigate = (pathname) => {
-  window.history.pushState(
-    {},
-    pathname,
-    window.location.origin + pathname
-  )
-  pageDiv.innerHTML = routes[pathname]
-}
-
-/* Update DOM when changing routes */
-window.onpopstate = () => {
-  pageDiv.innerHTML = routes[window.location.pathname]
-}
+// Update router
+window.addEventListener("popstate", router);
+window.addEventListener("DOMContentLoaded", router);
