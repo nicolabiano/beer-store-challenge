@@ -2,27 +2,14 @@
 
 /* Functions to fetch HTML */
 const home = fetch(`./html/home.html`).then(function (response) {
-		// The API call was successful!
 		return response.text();
 	}).then(function (html) {
-		// This is the HTML from our response as a text string
-		console.log(html);
 		return html;
-	});
-
-function loadPDP() {
-	fetch(`./html/pdp.html`).then(function (response) {
-		// The API call was successful!
+});
+const pdp = fetch(`./html/pdp.html`).then(function (response) {
 		return response.text();
 	}).then(function (html) {
-		var parser = new DOMParser();
-		pdp = parser.parseFromString(html, 'text/html');
-	});
-}
-
-document.addEventListener('DOMContentLoaded', function() {
-	loadHome();
-	loadPDP();
+		return html;
 });
 
 /* Define routes array */
