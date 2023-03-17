@@ -2,14 +2,10 @@
 
 /* Functions to fetch HTML */
 const home = fetch(`./html/home.html`).then(function (response) {
-		return response.text();
-	}).then(function (html) {
-		return html;
+		return response;
 });
 const pdp = fetch(`./html/pdp.html`).then(function (response) {
-		return response.text();
-	}).then(function (html) {
-		return html;
+		return response;
 });
 
 /* Define routes array */
