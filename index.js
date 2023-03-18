@@ -19,10 +19,10 @@ let contentDiv = document.getElementById('page');
 let routes = {
   '/': home,
   '/index.html': home,
-  '374-miller-lite': pdp,
-  '127-modelo-especial': pdp,
-  '743-corona-premier': pdp,
-  '841-lagunitas-ipa': pdp,
+  '/374-miller-lite': pdp,
+  '/127-modelo-especial': pdp,
+  '/743-corona-premier': pdp,
+  '/841-lagunitas-ipa': pdp,
 };
 
 // Update content when URL pathname changes
