@@ -126,9 +126,8 @@ async function loadProducts() {
  */
 async function loadProductInfo() {
 
-    //let currentPathname = window.location.pathname;
-    //let currentProductId = currentPathname.replace(/\D/g, '');
-    let currentProductId = 127;
+    let currentPathname = window.location.pathname;
+    let currentProductId = currentPathname.replace(/\D/g, '');
     let container = document.querySelector("#site-content");
 
     // Iterate every Product inside the array
