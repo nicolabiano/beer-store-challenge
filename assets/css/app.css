@@ -101,8 +101,11 @@ ul {
 .active-one *, .btn-style-one:hover * {
 	color: #ffffff;   
 }
-.active-one svg *, .btn-style-one:hover svg * {
+.active-one svg rect, .btn-style-one:hover svg rect, .active-one svg circle, .btn-style-one:hover svg circle {
 	fill: #ffffff
+}
+.active-one svg path, .btn-style-one:hover svg path {
+	stroke: #ffffff
 }
 .accessibility-text {
     font-size: 0;
@@ -374,12 +377,19 @@ ul {
     max-height: 6.88em;
     overflow: hidden;
 }
+.expanded #product-description {
+    overflow: visible;
+    max-height: max-content;
+}
 #product-read-more {
     position: absolute;
     bottom: 0;
     right: 0;
     height: 1.44em;
     background: #fff;
+}
+.expanded #product-read-more {
+    display: none;
 }
 #product-read-more::before {
     content: '...';
@@ -407,6 +417,12 @@ ul {
     height: fit-content;
     border: 1px solid;
     border-radius: 15.5px;
+}
+.active-variation {
+    border-color: #FF9F24
+}
+.active-variation a {
+    color: #FF9F24;
 }
 .variation-option a {
     padding: 6px 16px;

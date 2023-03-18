@@ -52,40 +52,7 @@ let home = `
 			<h2 class="product-listing-heading text-bolder text-color-one text-size-l">Populer</h2>
 			<a href="#" id="see-all-products" class="see-all-link text-color-two text-size-s">See All</a>
 		</div>
-		<ul class="products-container">
-			<li id="product-card" class="product id-127 instock">
-				<a href="/127-modelo-especial" class="product-link">
-					<h3 class="product-title text-color-one text-size-m text-bold">Modelo Especial</h3>
-					<div class="product-thumbnail-wrapper">
-						<img width="240" height="240" src="products/modelo-especial.jpeg" class="product-thumbnail-image" alt="" loading="lazy">
-					</div>
-					<span class="product-price text-color-one text-size-m text-bold">
-						<bdi><span class="currencySymbol">$</span><span class="amount">2.32</span></bdi>
-					</span>
-				</a>
-				<a href="#" class="add-to-cart-button btn btn-style-two">
-					<span class="add-to-cart-icon">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="11" y="5" width="2" height="14" rx="1" fill="white"/><rect x="5" y="13" width="2" height="14" rx="1" transform="rotate(-90 5 13)" fill="white"/></svg>		
-					</span>
-				</a>
-			</li>
-			<li id="product-card" class="product id-127 instock">
-				<a href="/pdp" class="product-link" data-link>
-					<h3 class="product-title text-color-one text-size-m text-bold">Modelo Especial</h3>
-					<div class="product-thumbnail-wrapper">
-						<img width="240" height="240" src="products/modelo-especial.jpeg" class="product-thumbnail-image" alt="" loading="lazy">
-					</div>
-					<span class="product-price text-color-one text-size-m text-bold">
-						<bdi><span class="currencySymbol">$</span><span class="amount">2.32</span></bdi>
-					</span>
-				</a>
-				<a href="#" class="add-to-cart-button btn btn-style-two">
-					<span class="add-to-cart-icon">
-						<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="11" y="5" width="2" height="14" rx="1" fill="white"/><rect x="5" y="13" width="2" height="14" rx="1" transform="rotate(-90 5 13)" fill="white"/></svg>		
-					</span>
-				</a>
-			</li>
-		</ul>
+		<ul class="products-container"></ul>
 	</div>
 </div>
 <div id="fixed-menu">
