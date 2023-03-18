@@ -133,7 +133,7 @@ async function loadProductInfo() {
     // Iterate every Product inside the array
     let i = 0;
     while (i < products.default.length) {
-      if (currentProductId === products.default[i].id) {
+      if (currentProductId == products.default[i].id) {
           // Define data to generate content
           let productId = products.default[i].id;
           let productBrand = products.default[i].brand;
@@ -195,7 +195,7 @@ async function loadProductInfo() {
               <a href="#" id="variation-option" class="variation-btn text-color-two text-size-s" value="`+products.default[i].skus[v].code+`">`+products.default[i].skus[v].name+`</a>
               `;
 
-              // Create new product cards
+              // Create variation swatches
               let variationWrapper = document.querySelector("#variation-swatches-wrapper");
               var li = document.createElement("li");
               li.setAttribute('class', 'variation-option');
@@ -203,7 +203,7 @@ async function loadProductInfo() {
               li.innerHTML = productVariations;
               variationWrapper.appendChild(li);
               v++
-          }
+          } return;
       }
       i++;
     }
