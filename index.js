@@ -21,6 +21,7 @@ let routes = {
   '/index.html': home,
   '/pdp': pdp,
 };
+console.log(routes);
 
 // Update content when URL pathname changes
 window.onpopstate = () => {
@@ -44,7 +45,6 @@ viewScripts();
 
 // Execute views functions
 function viewScripts() {
-  var intervalId;
   if (window.location.pathname === "/") {
     loadProducts();
   }
@@ -116,9 +116,10 @@ async function loadProducts() {
     li.innerHTML = productTemplate;
 
     // Expand router with new routes
-    const updateRoutes = function() {
+    function updateRoutes() {
       routes[productUrl] = pdp;
     }
+    console.log(routes);
     updateRoutes();
 
     i++;
