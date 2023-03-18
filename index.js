@@ -11,7 +11,6 @@ const stockPrice = await import('./js/stock-price.js');
 /* 
  * Set Router for dynamic content update
  */
-
 // Define dynamic content container
 let contentDiv = document.getElementById('page');
 
@@ -32,9 +31,10 @@ window.onpopstate = () => {
 }
 
 // Allow content update on navigation
-let onNavItemClick = (pathName) => {
+window.onNavItemClick = (pathName) => {
   window.history.pushState({}, pathName, window.location.origin + pathName);
   contentDiv.innerHTML = routes[pathName];
+  viewScripts();
 }
 
 // Update content
@@ -47,8 +47,12 @@ viewScripts();
 
 // Execute views functions
 function viewScripts() {
+  scrollTop();
   if (window.location.pathname === "/") {
     loadProducts();
+  }
+  if (window.location.pathname === "/index.html") {
+    window.location.replace("/");
   }
   if (document.getElementsByClassName('product-page').length) {
     loadProductInfo();
@@ -80,7 +84,7 @@ async function loadProducts() {
 
     // Assign data to content
     let productTemplate = `
-    <a href="`+productUrl+`" class="product-link">
+    <a href="#" onclick="onNavItemClick('/`+productUrl+`'); return false;" class="product-link">
       <h3 class="product-title text-color-one text-size-m text-bold">`+productBrand+`</h3>
       <div class="product-thumbnail-wrapper">
         <img width="240" height="240" src="`+productImage+`" class="product-thumbnail-image" alt="`+productAlt+`" loading="lazy">
@@ -192,7 +196,7 @@ async function loadProductInfo() {
           let v = 0;
           while (v < products.default[i].skus.length) {
               let productVariations = `
-              <a href="#" id="variation-option" class="variation-btn text-color-two text-size-s" value="`+products.default[i].skus[v].code+`">`+products.default[i].skus[v].name+`</a>
+              <a href="#" onclick="onVariationSwatch(`+products.default[i].skus[v].code+`); return false;" id="variation-option" class="variation-btn text-color-two text-size-s" value="`+products.default[i].skus[v].code+`">`+products.default[i].skus[v].name+`</a>
               `;
 
               // Create variation swatches
@@ -203,7 +207,8 @@ async function loadProductInfo() {
               li.innerHTML = productVariations;
               variationWrapper.appendChild(li);
               v++
-          } return;
+          } 
+          onVariationSwatch(productSku);
       }
       i++;
     }
@@ -217,27 +222,27 @@ function numberWithCommas(num) {
 }
 
 // Change active variation button on click
-var element = document.querySelectorAll('.variation-option');
-if (element) {
-  element.forEach(function(el, key){
-      el.addEventListener('click', function (event) {
-        swatchVariation(event);
-        el.classList.toggle("active-variation");
-          element.forEach(function(ell, els){
-              if(key !== els) {
-                  ell.classList.remove('active-variation');
-              }
-          });
-
-        event.preventDefault();
+window.onVariationSwatch = (value) => {
+    var element = document.querySelectorAll('.variation-option');
+    swatchVariation(value);
+    if (element) {
+      element.forEach(function(el, key){
+          let thisElemVal = el.querySelector('#variation-option').getAttribute("value");
+          console.log(thisElemVal);
+          console.log(value);
+          if (thisElemVal == value) {
+              el.classList.toggle("active-variation");
+          } else {
+              el.classList.remove('active-variation');
+          }
       });
-  });
+    }
 }
 
 // Update content when changing variations
-function swatchVariation(event) {
+function swatchVariation(value) {
     // Store value of clicked element
-    let activeVariation = event.target.getAttribute("value");
+    let activeVariation = value;
     // Run update function
     updatePriceStock(activeVariation);
 }
@@ -263,4 +268,12 @@ function updatePriceStock(sku) {
     let stockContainer = document.querySelector('#product-stock');
     priceContainer.innerHTML = productPrice;
     stockContainer.innerHTML = 'Stock: '+productStock;
+}
+
+// Scroll to top on page update
+function scrollTop() {
+  window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+  });
 }
