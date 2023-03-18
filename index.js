@@ -19,9 +19,11 @@ let contentDiv = document.getElementById('page');
 let routes = {
   '/': home,
   '/index.html': home,
-  '/pdp': pdp,
+  '374-miller-lite': pdp,
+  '127-modelo-especial': pdp,
+  '743-corona-premier': pdp,
+  '841-lagunitas-ipa': pdp,
 };
-console.log(routes);
 
 // Update content when URL pathname changes
 window.onpopstate = () => {
@@ -114,13 +116,6 @@ async function loadProducts() {
 
     // Append Product Card template
     li.innerHTML = productTemplate;
-
-    // Expand router with new routes
-    function updateRoutes() {
-      routes[productUrl] = pdp;
-    }
-    console.log(routes);
-    updateRoutes();
 
     i++;
   }
