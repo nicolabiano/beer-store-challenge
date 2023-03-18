@@ -1,2 +1,2 @@
-# beer-store-challenge
+# Beer Store Challenge
 Beer Ecommerce Dynamic Javascript Challenge
